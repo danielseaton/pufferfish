@@ -36,11 +36,12 @@ def load_methylation_df(cluster_id='yoda', nrows=None, nfiles=None):
 def load_expression_data(cluster_id='yoda'):
     
     working_dir = get_data_filepath(cluster_id)
-    expression_files = [os.path.join(working_dir, 'ExpressionData', x) for x in ['exprs_UD.txt', 'exprs_D3_test.txt']]
+    expression_files = [os.path.join(working_dir, 'ExpressionMatrix', x) for x in ['exprs_UD.txt', 'exprs_D3_test.txt']]
 
-    list_of_dfs = [pd.read_csv(f, sep='\t', index_col=0) for x in expression_files]
+    list_of_dfs = [pd.read_csv(x, sep='\t', index_col=0) for x in expression_files]
     exp_df = pd.concat(list_of_dfs, axis=1)
 
     return exp_df
 
 #df = load_methylation_df(nrows=100, nfiles=20)
+df = load_expression_data()
