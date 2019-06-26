@@ -2,6 +2,9 @@ import data_loader
 from sklearn.decomposition import PCA
 import pandas as pd
 
+
+
+
 n_components = 5
 
 m_df = data_loader.load_methylation_df()

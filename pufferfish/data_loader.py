@@ -42,6 +42,3 @@ def load_expression_data(cluster_id='yoda'):
     exp_df = pd.concat(list_of_dfs, axis=1)
 
     return exp_df
-
-#df = load_methylation_df(nrows=100, nfiles=20)
-#df = load_expression_data()
