@@ -16,4 +16,4 @@ print(pca.explained_variance_ratio_)
 
 pca_df = pd.DataFrame(data = pca.components_, index=['PC{}'.format(x) for x in range(1, n_components+1)], columns = m_df.columns)
 
-pca_df.to_csv('../data/methylation_PCA.tsv')
+pca_df.to_csv('../data/methylation_PCA.tsv', sep='\t')
