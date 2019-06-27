@@ -18,6 +18,11 @@ working_dir = "/home/thorsten/Desktop/hackathon"
 met = pu.load_methylation_df(working_dir=working_dir,nfiles=20,nrows=None)#, nrows=100, nfiles=20)
 exp = pu.load_expression_data(working_dir=working_dir)
 
+
+
+print(met.shape, exp.shape)
+
+
 # pre processing
 met = met.dropna()#.to_numpy()
 exp = exp#.to_numpy()
