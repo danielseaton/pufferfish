@@ -25,4 +25,4 @@ def pca_dim_reduction(m_df):
 
     # pca_df = pd.DataFrame(data = pca.components_, index=['PC{}'.format(x) for x in range(1, n_components+1)], columns = m_df.columns)
 
-pca_df.to_csv('../data/methylation_PCA.tsv', sep='\t')
+    pca_df.to_csv('../data/methylation_PCA.tsv', sep='\t')
