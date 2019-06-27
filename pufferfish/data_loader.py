@@ -18,6 +18,7 @@ def load_methylation_df(working_dir, nrows=None, nfiles=None):
         sample_name = os.path.basename(filepath)
         df = pd.read_csv(filepath, sep='\t', nrows=nrows)
         df.columns = ['chr','start','end',sample_name]
+        df = df.drop_duplicates(subset='start')
         df = df.set_index('start')
         df = df[[sample_name]]
         list_of_dfs.append(df)
