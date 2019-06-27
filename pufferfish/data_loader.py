@@ -23,7 +23,7 @@ def load_methylation_df(working_dir, nrows=None, nfiles=None):
         df = df[[sample_name]]
         list_of_dfs.append(df)
 
-    meth_df = pd.concat(list_of_dfs, axis=1, keep='first')
+    meth_df = pd.concat(list_of_dfs, axis=1)
 
     return meth_df
 
