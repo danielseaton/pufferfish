@@ -25,6 +25,7 @@ def load_methylation_df(cluster_id='yoda', nrows=None, nfiles=None):
         sample_name = os.path.basename(filepath)
         df = pd.read_csv(filepath, sep='\t', nrows=nrows)
         df.columns = ['chr','start','end',sample_name]
+        df = df.drop_duplicates(subset='start')
         df = df.set_index('start')
         df = df[[sample_name]]
         list_of_dfs.append(df)
@@ -43,5 +44,5 @@ def load_expression_data(cluster_id='yoda'):
 
     return exp_df
 
-#df = load_methylation_df(nrows=100, nfiles=20)
+#df = load_methylation_df(nrows=1000, nfiles=20)
 #df = load_expression_data()
