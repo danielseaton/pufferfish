@@ -5,3 +5,6 @@
 __author__ = """Thorten Beier"""
 __email__ = 'derthorsten@gmail.com'
 __version__ = '0.1.0'
+
+from . data_loader import *
+#from . dim_reduction import *
