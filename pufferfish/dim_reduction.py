@@ -1,24 +1,23 @@
-from . import data_loader
 from sklearn.decomposition import PCA
+import data_loader
 import pandas as pd
 
 
 
 from sklearn.externals import joblib
 # Output a pickle file for the model
-joblib.dump(clf, 'saved_model.pkl') 
+#joblib.dump(clf, 'saved_model.pkl') 
 
 
 
-n_components = 5
 
 
-def pca_dim_reduction(m_df):
-    m_df = data_loader.load_methylation_df()
+def pca_dim_reduction(m_df, n_components=5):
+#    m_df = data_loader.load_methylation_df()
     
 
     pca = PCA(n_components=n_components)
-    pca.fit(m_df)
+    pca.fit(m_df.values)
 
     #print(m_df.shape)
     print("explained variance ratios: ", pca.explained_variance_ratio_)
